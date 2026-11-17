@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Noticias, ideas y actualidad sobre agricultura.">
   <title>Campo al Día | Noticias de agricultura</title>
-  <link rel="stylesheet" href="styles.css?v=slider-2">
+  <link rel="stylesheet" href="styles.css?v=weather-1">
 </head>
 <body>
   <header class="site-header"><a class="brand" href="index.html">✳ Campo <span>al Día</span></a>
@@ -54,6 +54,7 @@
 <article class="news-card" data-searchable><a class="livestock-card-art art-pesca-mauritania" href="noticia-acuerdo-mauritania.html"><span>PESCA</span><b>↗</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-06">6 noviembre 2026</time> · 2 min</p><h3><a href="noticia-acuerdo-mauritania.html">Andalucía pide soluciones para la flota ante el fin del protocolo pesquero con Mauritania</a></h3><p>La Junta expresó su preocupación por el impacto que el vencimiento podría tener en la flota andaluza.</p><a class="read-more" href="noticia-acuerdo-mauritania.html">Leer noticia ↗</a></div></article>
       </div>
     </section>
+    <div class="home-sidebar">
     <aside class="olive-prices" aria-labelledby="olive-title">
       <p class="eyebrow dark">El mercado del campo</p>
       <h2 id="olive-title">Precio de la <em>aceituna</em></h2>
@@ -64,10 +65,19 @@
       <a class="read-more" href="https://agromerka.com/observatorio/precio/aceituna-mesa/andalucia/" target="_blank" rel="noopener noreferrer">Consultar AgroMerka ↗</a>
       <p class="olive-credit">Información obtenida del Portal de la Junta de Andalucía, recopilada por AgroMerka.</p>
     </aside>
+    <aside class="weather-card" aria-labelledby="weather-title">
+      <p class="eyebrow dark">Planifica tu jornada</p><h2 id="weather-title">El tiempo <em>agrícola</em></h2>
+      <form id="weather-search"><label for="weather-town">Busca tu municipio</label><div class="weather-search-row"><input id="weather-town" type="search" placeholder="Ej. Jaén" minlength="2" required><button type="submit">Buscar</button></div></form>
+      <label class="weather-choice" for="weather-places" hidden>Selecciona una localidad<select id="weather-places"></select></label>
+      <p class="weather-status" id="weather-status" aria-live="polite">Cargando previsión para Jaén…</p>
+      <div id="weather-content" hidden><div class="weather-current"><div><span id="weather-location"></span><strong id="weather-temp"></strong><small>Temperatura actual</small></div><span aria-hidden="true" class="weather-icon">☼</span></div><dl class="weather-details"><div><dt>Máx. / mín.</dt><dd id="weather-range"></dd></div><div><dt>Lluvia hoy</dt><dd id="weather-rain"></dd></div><div><dt>Viento actual</dt><dd id="weather-wind"></dd></div></dl><details class="weather-forecast"><summary>Ver próximos días</summary><ul id="weather-days"></ul></details><p class="weather-note">Previsión orientativa. Consulta los avisos oficiales antes de planificar tareas sensibles.</p></div>
+      <p class="weather-credit">Datos: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo ↗</a></p>
+    </aside>
+    </div>
     </div>
     <section class="about" id="sobre-el-blog"><div class="wrap about-inner"><span class="about-mark">✳</span><div><p class="eyebrow dark">Nuestra razón de ser</p><h2>Un lugar para escuchar<br>lo que <em>crece.</em></h2></div><p>Campo al Día es un blog para compartir ideas, descubrir cambios y acercarnos a las personas que trabajan la tierra.</p></div></section>
   </main>
   <footer class="site-footer"><a class="brand" href="index.html">✳ Campo <span>al Día</span></a><p>Noticias con los pies en la tierra.</p><small>© 2026 Campo al Día</small></footer>
-  <script src="script.js?v=latest-4" defer></script>
+  <script src="script.js?v=weather-1" defer></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Noticias, ideas y actualidad sobre agricultura.">
+  <title>Campo al Día | Noticias de agricultura</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="index.html">✳ Campo <span>al Día</span></a>
+    <nav aria-label="Navegación principal"><a href="index.html" aria-current="page">Inicio</a><a href="agricultura.html">Agricultura</a><a href="ganaderia.html">Ganadería</a><a href="pesca.html">Pesca</a></nav>
+    <form class="header-search" action="index.html#ultimas-noticias" method="get" role="search"><label class="visually-hidden" for="header-search">Buscar noticias</label><input id="header-search" name="q" type="search" placeholder="Buscar noticias..." autocomplete="off"><button type="submit" aria-label="Buscar">⌕</button></form><a class="header-link" href="#ultimas-noticias">Explorar noticias ↗</a>
+  </header>
+  <main>
+    <section class="featured-slider" aria-label="Noticias más leídas" aria-roledescription="carrusel">
+      <div class="slider-heading wrap"><p class="eyebrow">Selección destacada</p><h1>Las noticias más leídas</h1><p>Una selección provisional hasta disponer de estadísticas de lectura.</p></div>
+      <div class="slides wrap">
+        <article class="slide" data-slide><div class="slide-image art-water" role="img" aria-label="Riego por goteo en un campo de cultivo"></div><div class="slide-copy"><p class="eyebrow">Agua y cultivo</p><h2>Nuevas técnicas de riego para ahorrar agua en el campo</h2><a class="button" href="noticia-riego.html">Leer noticia ↗</a></div></article>
+        <article class="slide" data-slide hidden><div class="slide-image art-soil" role="img" aria-label="Cultivos jóvenes en un suelo agrícola"></div><div class="slide-copy"><p class="eyebrow">Suelo vivo</p><h2>La salud del suelo, clave para una agricultura sostenible</h2><a class="button" href="noticia-suelo.html">Leer noticia ↗</a></div></article>
+        <article class="slide" data-slide hidden><div class="slide-image art-tech" role="img" aria-label="Maquinaria agrícola trabajando en el campo"></div><div class="slide-copy"><p class="eyebrow">Innovación rural</p><h2>Tecnología y maquinaria agrícola: novedades de la temporada</h2><a class="button" href="noticia-maquinaria.html">Leer noticia ↗</a></div></article>
+      </div>
+      <div class="slider-controls wrap"><button type="button" data-slider-prev aria-label="Noticia anterior">←</button><span data-slider-status aria-live="polite">1 / 3</span><button type="button" data-slider-next aria-label="Noticia siguiente">→</button></div>
+    </section>
+    <section class="news-section wrap" id="ultimas-noticias">
+      <div class="section-heading"><div><p class="eyebrow dark">Lo que está pasando</p><h2>Últimas <em>noticias</em></h2></div></div>
+      <p id="search-status" class="search-status" aria-live="polite">8 noticias</p>
+      <div class="news-grid">
+<article class="news-card" data-searchable><a class="art video-card" href="noticia-cosecha-calor.html"><span>AGRICULTURA · VÍDEO</span><b>▶</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-17">17 noviembre 2026</time> · Vídeo</p><h3><a href="noticia-cosecha-calor.html">El calor adelanta la cosecha de cereal y aumenta la precaución ante incendios</a></h3><p>Un reportaje de RTVE explica cómo el calor condicionó la campaña de cereal de 2026.</p><a class="read-more" href="noticia-cosecha-calor.html">Ver noticia ↗</a></div></article>
+<article class="news-card" data-searchable><a class="livestock-card-art art-pesca-cuotas" href="noticia-cuotas-pesqueras.html"><span>PESCA</span><b>↗</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-17">17 noviembre 2026</time> · 2 min</p><h3><a href="noticia-cuotas-pesqueras.html">El Gobierno aprueba nuevas reglas para gestionar las cuotas pesqueras</a></h3><p>El decreto modifica criterios de distribución y gestión para mejorar el aprovechamiento de las cuotas.</p><a class="read-more" href="noticia-cuotas-pesqueras.html">Leer noticia ↗</a></div></article>
+<article class="news-card" data-searchable><a class="livestock-card-art art-ganado-lonja" href="noticia-lonja-salamanca.html"><span>GANADERÍA</span><b>↗</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-16">16 noviembre 2026</time> · 2 min</p><h3><a href="noticia-lonja-salamanca.html">La lonja de Salamanca registra subidas en el ovino y parte del bovino</a></h3><p>La sesión del 16 de noviembre dejó una evolución desigual entre los mercados ganaderos.</p><a class="read-more" href="noticia-lonja-salamanca.html">Leer noticia ↗</a></div></article>
+        <article class="news-card featured" data-searchable><a class="art art-water" href="noticia-riego.html"><span>AGUA Y CULTIVO</span><b>01</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-16">16 noviembre 2026</time> · 4 min</p><h3><a href="noticia-riego.html">Nuevas técnicas de riego para ahorrar agua en el campo</a></h3><p>Pequeños cambios para aprovechar mejor el agua y mantener los cultivos saludables.</p><a class="read-more" href="noticia-riego.html">Leer noticia ↗</a></div></article>
+<article class="news-card" data-searchable><a class="livestock-card-art art-ganado-ayudas" href="noticia-ayudas-ganaderia.html"><span>GANADERÍA</span><b>↗</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-14">14 noviembre 2026</time> · 2 min</p><h3><a href="noticia-ayudas-ganaderia.html">El FEGA revisa los importes provisionales de las ayudas ganaderas de la PAC</a></h3><p>El Fondo Español de Garantía Agraria ha publicado los importes provisionales revisados para la campaña 2026.</p><a class="read-more" href="noticia-ayudas-ganaderia.html">Leer noticia ↗</a></div></article>
+        <article class="news-card" data-searchable><a class="art art-soil" href="noticia-suelo.html"><span>SUELO VIVO</span><b>02</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-12">12 noviembre 2026</time> · 3 min</p><h3><a href="noticia-suelo.html">La salud del suelo, clave para una agricultura sostenible</a></h3><p>Cuidar la tierra hoy ayuda a que siga dando vida y alimento.</p><a class="read-more" href="noticia-suelo.html">Leer noticia ↗</a></div></article>
+        <article class="news-card" data-searchable><a class="art art-tech" href="noticia-maquinaria.html"><span>INNOVACIÓN RURAL</span><b>03</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-08">8 noviembre 2026</time> · 5 min</p><h3><a href="noticia-maquinaria.html">Tecnología y maquinaria agrícola: novedades de la temporada</a></h3><p>Herramientas e innovaciones que acompañan el trabajo diario en el campo.</p><a class="read-more" href="noticia-maquinaria.html">Leer noticia ↗</a></div></article>
+<article class="news-card" data-searchable><a class="livestock-card-art art-pesca-mauritania" href="noticia-acuerdo-mauritania.html"><span>PESCA</span><b>↗</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-06">6 noviembre 2026</time> · 2 min</p><h3><a href="noticia-acuerdo-mauritania.html">Andalucía pide soluciones para la flota ante el fin del protocolo pesquero con Mauritania</a></h3><p>La Junta expresó su preocupación por el impacto que el vencimiento podría tener en la flota andaluza.</p><a class="read-more" href="noticia-acuerdo-mauritania.html">Leer noticia ↗</a></div></article>
+      </div>
+    </section>
+    <section class="about" id="sobre-el-blog"><div class="wrap about-inner"><span class="about-mark">✳</span><div><p class="eyebrow dark">Nuestra razón de ser</p><h2>Un lugar para escuchar<br>lo que <em>crece.</em></h2></div><p>Campo al Día es un blog para compartir ideas, descubrir cambios y acercarnos a las personas que trabajan la tierra.</p></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="index.html">✳ Campo <span>al Día</span></a><p>Noticias con los pies en la tierra.</p><small>© 2026 Campo al Día</small></footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -26,12 +26,22 @@ const next = document.querySelector('[data-slider-next]');
 const sliderStatus = document.querySelector('[data-slider-status]');
 if (slides.length && previous && next && sliderStatus) {
   let current = 0;
+  const dots = [...document.querySelectorAll("[data-slider-dot]")];
   const showSlide = (index) => {
     current = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => { slide.hidden = i !== current; });
+    dots.forEach((dot, i) => dot.setAttribute("aria-current", String(i === current)));
     sliderStatus.textContent = `${current + 1} / ${slides.length}`;
   };
-  previous.addEventListener('click', () => showSlide(current - 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+  document.querySelector('.featured-slider').addEventListener('keydown', (event) => {
+    if (event.target.matches('input, textarea')) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      showSlide(current + (event.key === 'ArrowRight' ? 1 : -1));
+    }
+  });
+  previous.addEventListener('click' , () => showSlide(current - 1));
   next.addEventListener('click', () => showSlide(current + 1));
 }
 

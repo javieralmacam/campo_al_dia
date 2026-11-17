@@ -34,3 +34,34 @@ if (slides.length && previous && next && sliderStatus) {
   previous.addEventListener('click', () => showSlide(current - 1));
   next.addEventListener('click', () => showSlide(current + 1));
 }
+
+const oliveRows = document.querySelector('#olive-price-rows');
+if (oliveRows) {
+  const loadOlivePrices = async () => {
+    const message = document.querySelector('#olive-price-status');
+    try {
+      const response = await fetch('data/olive-prices.json', { cache: 'no-store' });
+      if (!response.ok) throw new Error('Cotizaciones no disponibles');
+      const data = await response.json();
+      if (!Array.isArray(data.rows) || !data.rows.length) throw new Error('Datos vacíos');
+      const fragment = document.createDocumentFragment();
+      for (const row of data.rows) {
+        if (!Number.isFinite(row.price) || !/^\d{4}-\d{2}-\d{2}$/.test(row.date)) throw new Error('Datos incorrectos');
+        const tr = document.createElement('tr');
+        const date = new Date(`${row.date}T12:00:00`);
+        const values = [row.variety, row.price.toLocaleString('es-ES', { minimumFractionDigits: 2 }), date.toLocaleDateString('es-ES')];
+        values.forEach(value => { const td = document.createElement('td'); td.textContent = value; tr.append(td); });
+        fragment.append(tr);
+      }
+      oliveRows.replaceChildren(fragment);
+      const checked = new Date(data.checkedAt);
+      message.textContent = `Fuente consultada el ${checked.toLocaleDateString('es-ES')}.`;
+      if (Date.now() - checked.getTime() > 3 * 86400000) message.textContent += ' La consulta está pendiente de actualización.';
+    } catch {
+      message.textContent = 'No se ha podido consultar la tabla. Puedes ver las cotizaciones en la fuente.';
+      if (!oliveRows.querySelectorAll('tr')[0]?.querySelectorAll('td')[1]) oliveRows.textContent = '';
+    }
+  };
+  loadOlivePrices();
+  setInterval(loadOlivePrices, 60 * 60 * 1000);
+}

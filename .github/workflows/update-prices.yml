@@ -1,0 +1,53 @@
+name: Actualizar cotizaciones y publicar web
+on:
+  schedule:
+    - cron: '20 7 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Consultar cotizaciones
+        id: prices
+        continue-on-error: true
+        run: python3 scripts/update_olive_prices.py
+      - name: Conservar la última referencia si falla la fuente
+        if: steps.prices.outcome == 'failure'
+        run: echo '::warning::No se pudo actualizar la fuente. Se publica la última cotización con su fecha original.'
+      - name: Guardar la referencia actualizada
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/olive-prices.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Actualizar cotizaciones de aceituna'
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - name: Preparar archivos públicos
+        run: |
+          mkdir _site
+          cp *.html *.css *.js _site/
+          cp -r images data _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

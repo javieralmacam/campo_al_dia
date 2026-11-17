@@ -1,0 +1,27 @@
+{
+  "source": "https://agromerka.com/observatorio/precio/aceituna-mesa/andalucia/",
+  "checkedAt": "2026-11-17T19:07:21.776227+00:00",
+  "rows": [
+    {
+      "variety": "Manzanilla",
+      "price": 0.73,
+      "date": "2026-11-01",
+      "period": "26 oct – 1 nov 2026",
+      "unit": "€/kg"
+    },
+    {
+      "variety": "Hojiblanca",
+      "price": 0.41,
+      "date": "2026-11-08",
+      "period": "2–8 nov 2026",
+      "unit": "€/kg"
+    },
+    {
+      "variety": "Gordal",
+      "price": 0.6,
+      "date": "2026-10-18",
+      "period": "12–18 oct 2026",
+      "unit": "€/kg"
+    }
+  ]
+}

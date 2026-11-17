@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Noticias, ideas y actualidad sobre agricultura.">
   <title>Campo al Día | Noticias de agricultura</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=olive-1">
 </head>
 <body>
   <header class="site-header"><a class="brand" href="index.html">✳ Campo <span>al Día</span></a>
@@ -22,7 +22,8 @@
       </div>
       <div class="slider-controls wrap"><button type="button" data-slider-prev aria-label="Noticia anterior">←</button><span data-slider-status aria-live="polite">1 / 3</span><button type="button" data-slider-next aria-label="Noticia siguiente">→</button></div>
     </section>
-    <section class="news-section wrap" id="ultimas-noticias">
+    <div class="home-content wrap">
+    <section class="news-section" id="ultimas-noticias">
       <div class="section-heading"><div><p class="eyebrow dark">Lo que está pasando</p><h2>Últimas <em>noticias</em></h2></div></div>
       <p id="search-status" class="search-status" aria-live="polite">8 noticias</p>
       <div class="news-grid">
@@ -36,9 +37,20 @@
 <article class="news-card" data-searchable><a class="livestock-card-art art-pesca-mauritania" href="noticia-acuerdo-mauritania.html"><span>PESCA</span><b>↗</b></a><div class="news-copy"><p class="meta"><time datetime="2026-11-06">6 noviembre 2026</time> · 2 min</p><h3><a href="noticia-acuerdo-mauritania.html">Andalucía pide soluciones para la flota ante el fin del protocolo pesquero con Mauritania</a></h3><p>La Junta expresó su preocupación por el impacto que el vencimiento podría tener en la flota andaluza.</p><a class="read-more" href="noticia-acuerdo-mauritania.html">Leer noticia ↗</a></div></article>
       </div>
     </section>
+    <aside class="olive-prices" aria-labelledby="olive-title">
+      <p class="eyebrow dark">El mercado del campo</p>
+      <h2 id="olive-title">Precio de la <em>aceituna</em></h2>
+      <p class="olive-region">Aceituna de mesa · Andalucía</p>
+      <table><caption>Últimas cotizaciones disponibles en origen</caption><thead><tr><th scope="col">Variedad</th><th scope="col">€/kg</th><th scope="col">Fecha</th></tr></thead><tbody id="olive-price-rows"><tr><td colspan="3">Cargando cotizaciones…</td></tr></tbody></table>
+      <p id="olive-price-status" class="olive-note" aria-live="polite"></p>
+      <p class="olive-note">Precios orientativos. Cada variedad conserva la fecha de su última cotización.</p>
+      <a class="read-more" href="https://agromerka.com/observatorio/precio/aceituna-mesa/andalucia/" target="_blank" rel="noopener noreferrer">Consultar AgroMerka ↗</a>
+      <p class="olive-credit">Información obtenida del Portal de la Junta de Andalucía, recopilada por AgroMerka.</p>
+    </aside>
+    </div>
     <section class="about" id="sobre-el-blog"><div class="wrap about-inner"><span class="about-mark">✳</span><div><p class="eyebrow dark">Nuestra razón de ser</p><h2>Un lugar para escuchar<br>lo que <em>crece.</em></h2></div><p>Campo al Día es un blog para compartir ideas, descubrir cambios y acercarnos a las personas que trabajan la tierra.</p></div></section>
   </main>
   <footer class="site-footer"><a class="brand" href="index.html">✳ Campo <span>al Día</span></a><p>Noticias con los pies en la tierra.</p><small>© 2026 Campo al Día</small></footer>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=olive-1" defer></script>
 </body>
 </html>

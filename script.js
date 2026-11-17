@@ -6,8 +6,10 @@ if (input && status) {
   const filterNews = () => {
     const query = input.value.trim().toLocaleLowerCase('es');
     let shown = 0;
-    for (const card of cards) {
-      const matches = card.textContent.toLocaleLowerCase('es').includes(query);
+    for (const [index, card] of cards.entries()) {
+      const matches = query
+        ? card.textContent.toLocaleLowerCase('es').includes(query)
+        : index < 4;
       card.hidden = !matches;
       if (matches) shown++;
     }
